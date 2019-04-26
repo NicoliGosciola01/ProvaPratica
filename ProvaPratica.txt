@@ -1,0 +1,86 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
+
+namespace ProvaPratica
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IWebDriver driver = new ChromeDriver();
+
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+
+            //Entrar no site automationpractice e selecionar uma opção de produto
+            driver.Url = "http://www.automationpractice.com";
+            Actions acao = new Actions(driver);
+            IWebElement itemProduto = driver.FindElement(By.XPath("//*[@id='homefeatured']/li[1]/div[@class='product-container']"));
+            IWebElement botaoProdutoSelecionado = driver.FindElement(By.XPath("//*[@id='homefeatured']/li[1]/div/div[@class='right-block']/div[@class='button-container']/a[@title='Add to cart']"));
+            acao.MoveToElement(itemProduto);
+            acao.MoveToElement(botaoProdutoSelecionado);
+            acao.Click();
+            acao.Perform();
+            driver.FindElement(By.XPath("//*[@id='layer_cart']/div[1]/div[2]/div[4]/a[@title='Proceed to checkout']")).Click();
+            driver.FindElement(By.XPath("//*[@id='center_column']/p[2]/a[@title='Proceed to checkout']")).Click();
+
+
+            //Criar acesso ao site
+            driver.FindElement(By.Id("email_create")).SendKeys("nicoligosciola10@hotmail.com");
+            driver.FindElement(By.XPath("//*[@id='SubmitCreate']")).Click();
+            driver.FindElement(By.XPath("//*[@id= 'id_gender1']")).Click();
+            driver.FindElement(By.Id("customer_firstname")).SendKeys("Nicoli");
+            driver.FindElement(By.Id("customer_lastname")).SendKeys("Gosciola");
+            driver.FindElement(By.Id("passwd")).SendKeys("Nicoli11051993");
+            var selectElementDay = new SelectElement(driver.FindElement(By.Id("days")));
+            selectElementDay.SelectByValue("11");
+            var selectElementMonths = new SelectElement(driver.FindElement(By.Id("months")));
+            selectElementMonths.SelectByValue("5");
+            var selectElementYears = new SelectElement(driver.FindElement(By.Id("years")));
+            selectElementYears.SelectByValue("1993");
+            driver.FindElement(By.Id("newsletter")).Click();
+            driver.FindElement(By.Id("optin")).Click();
+            driver.FindElement(By.XPath("//*[@id='newsletter']")).Click();
+            driver.FindElement(By.XPath("//*[@id='optin']")).Click();
+            //driver.FindElement(By.Id("firstname")).SendKeys("Nicoli");
+            //driver.FindElement(By.Id("lastname")).SendKeys("Gosciola");
+            driver.FindElement(By.Id("company")).SendKeys("BRQ");
+            driver.FindElement(By.Id("address1")).SendKeys("20 HICKSVILLE ROAD");
+            driver.FindElement(By.Id("city")).SendKeys("New York");
+            var selectElementEstado = new SelectElement(driver.FindElement(By.Id("id_state")));
+            selectElementEstado.SelectByValue("9");
+            driver.FindElement(By.Id("postcode")).SendKeys("00000");
+            //driver.FindElement(By.XPath("//*[@id='']/li[9]/a")).Click();
+            driver.FindElement(By.Id("other")).SendKeys("Teste para BRQ");
+            driver.FindElement(By.Id("phone")).SendKeys("551156115324");
+            driver.FindElement(By.Id("phone_mobile")).SendKeys("5511981855325");
+            driver.FindElement(By.Id("alias")).SendKeys("Teste");
+            driver.FindElement(By.Id("submitAccount")).Click();
+
+
+            //Pagamento
+            driver.FindElement(By.XPath("//*[@id='ordermsg']/textarea")).SendKeys("BRQ");
+            driver.FindElement(By.XPath("//*[@id='center_column']/form/p/button[@name='processAddress']")).Click();
+            driver.FindElement(By.Id("cgv")).Click();
+            driver.FindElement(By.XPath("//*[@id='form']/p/button[@name='processCarrier']")).Click();
+            driver.FindElement(By.XPath("//*[@id='HOOK_PAYMENT']/div[2]/div/p/a[@title='Pay by check.']")).Click();
+            driver.FindElement(By.XPath("//*[@id='cart_navigation']/button[@type='submit']")).Click();
+
+        } 
+    }  
+
+    internal class JavascriptExecutor
+    {
+        internal void executeScript(string v1, string v2)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
