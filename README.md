@@ -1,6 +1,6 @@
 Site Testado: Automation Practice - My Store - www.automationpractice.com
 
-Donwload do projeto: Automation Practice.
+Donwload do projeto: ProvaPratica - BRQ.
 
 Softwares necessários: Visual Studio; Chrome; 
 
@@ -27,7 +27,7 @@ Baixe e instale o Chrome;
 Baixe o projeto e descompacte-o;
 Acesse o VisualStudio;
 Dentro do VisualStudio clique em "File" e depois em "Open Projects from File System...";
-Em Import source, digite o endereço do projeto. Exemplo: "C:\Repositorio\automation-practice". Ou clique em "Directory" e selecione a pasta do projeto "automation-practice" e clique em "OK";
+Em Import source, digite o endereço do projeto. Exemplo: "C:\Users\nggosciola\source\repos\ProvaPratica - BRQ". Ou clique em "Directory" e selecione a pasta do projeto "ProvaPratica - BRQ" e clique em "OK";
 Clique em "Finish" e espere o projeto carregar;
 Após, clique em "Start";
 
