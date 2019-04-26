@@ -1,32 +1,33 @@
-# ProvaPratica
-Prova Prática para BRQ
+Site Testado: Automation Practice - My Store - www.automationpractice.com
 
-Automação de testes do site de compras online: www.automationpractice.com
+Donwload do projeto: Automation Practice.
 
-Os testes foram realizados em linguagem C# - .Net
+Softwares necessários: Visual Studio; Chrome; 
 
-Está disponivel um BDD para está automação
+Caso de teste proposto: realizar uma compra com sucesso
 
-Configuração para Desenvolvimento/Execução dos testes
+Acessar o site: www.automationpractice.com.
+Escolha um produto qualquer na loja.
+Adicione o produto escolhido ao carrinho.
+Prossiga para o checkout.
+Valide se o produto foi corretamente adicionado ao carrinho e prossiga caso esteja tudo certo.
+Realize o cadastro do cliente preenchendo todos os campos obrigatórios dos formulários.
+Valide se o endereço está correto e prossiga.
+Aceite os termos de serviço e prossiga.
+Valide o valor total da compra.
+Selecione um método de pagamento e prossiga.
+Confirme a compra e valide se foi finalizada com sucesso.
 
-Para que está automação rode, é necessário possuir os seguintes aplicativos:
+Preparação do ambiente - Passo a Passo:
 
-- Visual Studio
-Para instalar o visual studio, utiliza o link:
-https://docs.microsoft.com/pt-br/visualstudio/install/install-visual-studio?view=vs-2017
+Baixe e instale o VisualStudio;
+Baixe e instale o Selenium WebDriver; Selenium ChromeDriver;
+Baixe e instale o Chrome;
 
-- Instalar o Plugin Selenium WebDriver
-Selenium.WebDriver - Versão 74.0.0
-Selenium.WebDriver.ChromeDriver - Versão 3.141.0
-Selenium.Support - são 3.141.0
-
-Instalação através interface gráfica: 
-Para realizar a instalação via interface gráfica é necessário acessar o menu Ferramentas / Gerenciador de Pacotes do Nuget / Gerenciar Pacotes do Nuget para a Solução
-Na janela aberta, na aba “Procurar” buscar pelas bibliotecas que deseja instalar.
-
-**Isto é necessário para que os testes possam ser executados sem erros**
-
-
-Nicoli Gosciola – @Nicoli-Gosciola – nicoligosciola@gmail.com
-Distribuído sob a licença XYZ. Veja LICENSE para mais informações.
+Baixe o projeto e descompacte-o;
+Acesse o VisualStudio;
+Dentro do VisualStudio clique em "File" e depois em "Open Projects from File System...";
+Em Import source, digite o endereço do projeto. Exemplo: "C:\Repositorio\automation-practice". Ou clique em "Directory" e selecione a pasta do projeto "automation-practice" e clique em "OK";
+Clique em "Finish" e espere o projeto carregar;
+Após, clique em "Start";
 
